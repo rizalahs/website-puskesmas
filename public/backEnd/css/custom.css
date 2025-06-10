@@ -1,0 +1,173 @@
+.mt_30 {
+	margin-top:30px;
+}
+.pos_r {
+	position: relative;
+}
+.h_0 {
+	height: 0;
+}
+.pb_56_per {
+	padding-bottom: 56%;
+}
+.mb_80 {
+	margin-bottom: 80px;
+}
+.d_i_b {
+	display: inline-block;
+}
+.title {
+	background: #fbdd9b;
+}
+.title span {
+	color: #4172a5;
+	font: bold;
+	font-weight: 700;
+}
+.img-style {
+	width: 200px;
+	height: auto;
+}
+.heading {
+	font-weight: bold;
+	color: #042395!important;
+}
+.show-img {
+	width: 300px;
+	height: auto;
+	border: 1px solid #000;
+}
+.seo-section {
+	background: #e4e4e4;
+}
+.seo-section span {
+	color: #4172a5;
+	font: bold;
+	font-weight: 700;
+}
+.delete-form {
+	display: none;
+}
+.logo {
+	width: 205px;
+	height: auto;
+}
+.favicon {
+	width: 100px;
+	height: auto;
+}
+.banner-half {
+	width: 50%;
+}
+.banner-input {
+	font-size: x-small !important;
+}
+.banner-img {
+	width: 100%;
+	height: auto;
+}
+.banner-btn {
+	margin-top: 10px;
+}
+.slider-section {
+	background: #fbdd9b;
+}
+.slider-section span {
+	color: #4172a5;
+	font: bold;
+	font-weight: 700;
+}
+.page-home {
+	font-weight: bold;
+	color: #042395!important;
+}
+.page-home-img {
+	width: 200px;
+	height: auto;
+}
+.news-photo {
+	width: 100px;
+	height: auto;
+}
+.news-banner {
+	width: 110px;
+	height: auto;
+}
+.news-comment {
+	padding-bottom: 20px;
+}
+.date {
+	width:60px;
+}
+.event-action {
+	width:100px;
+}
+.feature-icon {
+	font-size: 30px;
+}
+.icon-width {
+	width: 5%;
+}
+.portfolio-detail-width1 {
+	width: 30%;
+}
+.portfolio-detail-width2 {
+	width: 70%;
+}
+.other-img-item {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.other-img-item img {
+	border: 1px solid #929292;
+	margin-bottom: 5px;
+}
+.other-img-item a {
+	font-size: 12px;
+}
+.other-img {
+	width: 100px;
+	height: auto;
+}
+.lang-checkbox {
+	margin-top: 12px;
+}
+
+.sidebar .nav-item .nav-link {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.sidebar-dark .nav-item .nav-link i {
+	width: 16px;
+}
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: 34px;
+	height: 34px;
+}
+
+.select2-container--default .select2-selection--single {
+	border-color: #d1d3e2;
+}
+
+
+.language-page-separator {
+	padding-top:15px;
+	border-top: 1px solid #cecece;
+}
+
+.fz_15 {
+	font-size: 15px!important;
+}
+
+.visit-website {
+	padding-top: 20px;
+}
+.visit-website a {
+	color: #fff!important;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 3px 10px;
+}
