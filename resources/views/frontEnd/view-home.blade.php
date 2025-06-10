@@ -171,6 +171,65 @@
 @endif
 <!--About End-->
 
+<!--Blog-Area Start-->
+@if($page_home_lang_independent->home_blog_status == 'Show')
+<div class="blog-area pt_90 pb_90">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="headline">
+                    <h2>Berita Terkini</h2>
+                    <h3>Seputar Kegiatan Puskesmas Bontang Utara 1</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-carousel owl-carousel">
+                    @php $i=0; @endphp
+                    @foreach($news_fetched as $data)
+                        @php $i++; @endphp
+                        @if($i > $page_home_lang_independent->home_blog_item)
+                            @php break; @endphp
+                        @endif
+
+                        <div class="blog-item effect-item">
+                            <a href="{{ route('news.view',$data->slug) }}" class="image-effect">
+                                <div class="blog-image" style="background-image: url({{ asset('upload/'.$data->photo) }})"></div>
+                            </a>
+                            <div class="blog-text">
+                                <h3><a href="{{ route('news.view',$data->slug) }}">{{ $data->title }}</a></h3>
+                                <span><i class="fas fa-calendar"></i>
+                                    {{ date('M d, Y',strtotime($data->news_date)) }}
+                                </span>
+                                <p>
+                                    {{ $data->short_content }}
+                                </p>
+                            </div>
+                            <div class="blog-author">
+                                @php
+                                $category = \App\Models\Category::find($data->category_id);
+                                @endphp
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('news.category.view',$category->slug) }}">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            {{ $data['category']['name'] }}
+                                        </a>
+                                    </li>
+                                    <li class="blog-button"><a href="{{ route('news.view',$data->slug) }}"><i class="fas fa-long-arrow-alt-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+<!--Blog-Area End-->
+
 <!--Choose-Area Start-->
 @if($page_home_lang_independent->home_why_choose_status == 'Show')
 <div class="choose-area pb_90">
@@ -246,8 +305,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>{{ $page_home->home_service_title }}</h2>
-                    <h3>{{ $page_home->home_service_subtitle }}</h3>
+                    <h2>Layanan Kami</h2>
+                    <h3>Kami Selalu Hadir Memberikan Layanan Terbaik</h3>
                 </div>
             </div>
         </div>
@@ -324,8 +383,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>{{ $page_home->home_portfolio_title }}</h2>
-                    <h3>{{ $page_home->home_portfolio_subtitle }}</h3>
+                    <h2>Inovasi</h2>
+                    <h3>Kami percaya, inovasi adalah kunci untuk melayani lebih baik, cepat da murah. Guna meningkatkan kualitas hidup masyarakat secara berkelanjutan.</h3>
                 </div>
             </div>
         </div>
@@ -462,8 +521,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>{{ $page_home->home_team_title }}</h2>
-                    <h3>{{ $page_home->home_team_subtitle }}</h3>
+                    <h2>Tenaga Profesional di Balik Pelayanan Terbaik Kami</h2>
+                    <h3>“Kami Bekerja dengan Hati, Melayani dengan Ilmu”</h3>
                 </div>
             </div>
         </div>
@@ -481,27 +540,27 @@
                             </div>
                             <div class="team-social">
                                 <ul>
-                                    @if($data->facebook != '')
+                                    {{-- @if($data->facebook != '')
                                         <li><a href="{{ $data->facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                                    @endif
-                                    @if($data->twitter != '')
+                                    @endif --}}
+                                    {{-- @if($data->twitter != '')
                                         <li><a href="{{ $data->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    @endif
+                                    @endif --}}
                                     @if($data->linkedin != '')
-                                        <li><a href="{{ $data->linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                        <li><a href="https://wa.me/{{ $data->linkedin }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                     @endif
-                                    @if($data->youtube != '')
+                                    {{-- @if($data->youtube != '')
                                         <li><a href="{{ $data->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                    @endif
-                                    @if($data->google_plus != '')
+                                    @endif --}}
+                                    {{-- @if($data->google_plus != '')
                                         <li><a href="{{ $data->google_plus }}" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                                    @endif
-                                    @if($data->instagram != '')
+                                    @endif --}}
+                                    {{-- @if($data->instagram != '')
                                         <li><a href="{{ $data->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    @endif
-                                    @if($data->flickr != '')
+                                    @endif --}}
+                                    {{-- @if($data->flickr != '')
                                         <li><a href="{{ $data->flickr }}" target="_blank"><i class="fab fa-flickr"></i></a></li>
-                                    @endif
+                                    @endif --}}
                                 </ul>
                             </div>
                         </div>
@@ -592,65 +651,6 @@
 </div>
 @endif
 <!--Testomonial-Area End-->
-
-<!--Blog-Area Start-->
-@if($page_home_lang_independent->home_blog_status == 'Show')
-<div class="blog-area pt_90 pb_90">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="headline">
-                    <h2>{{ $page_home->home_blog_title }}</h2>
-                    <h3>{{ $page_home->home_blog_subtitle }}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="blog-carousel owl-carousel">
-                    @php $i=0; @endphp
-                    @foreach($news_fetched as $data)
-                        @php $i++; @endphp
-                        @if($i > $page_home_lang_independent->home_blog_item)
-                            @php break; @endphp
-                        @endif
-
-                        <div class="blog-item effect-item">
-                            <a href="{{ route('news.view',$data->slug) }}" class="image-effect">
-                                <div class="blog-image" style="background-image: url({{ asset('upload/'.$data->photo) }})"></div>
-                            </a>
-                            <div class="blog-text">
-                                <h3><a href="{{ route('news.view',$data->slug) }}">{{ $data->title }}</a></h3>
-                                <span><i class="fas fa-calendar"></i>
-                                    {{ date('M d, Y',strtotime($data->news_date)) }}
-                                </span>
-                                <p>
-                                    {{ $data->short_content }}
-                                </p>
-                            </div>
-                            <div class="blog-author">
-                                @php
-                                $category = \App\Models\Category::find($data->category_id);
-                                @endphp
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('news.category.view',$category->slug) }}">
-                                            <i class="fas fa-pencil-alt"></i>
-                                            {{ $data['category']['name'] }}
-                                        </a>
-                                    </li>
-                                    <li class="blog-button"><a href="{{ route('news.view',$data->slug) }}"><i class="fas fa-long-arrow-alt-right"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endif
-<!--Blog-Area End-->
 
 <!--Brand-Area Start-->
 <div class="brand-area bg-area pt_90 pb_90">

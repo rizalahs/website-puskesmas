@@ -402,8 +402,13 @@
 <body>
     {!! $comment->code_body !!}
 
+    <!-- Banner Gambar -->
+<div class="top-banner">
+    <img src="{{ asset('asset/tanpajudul.png') }}" alt="Banner Puskesmas" style="width: 100%; height: 185px;">
+</div>
+
     <!--Header-Area Start-->
-    <div class="header-area">
+    {{-- <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-5 col-12">
@@ -457,7 +462,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--Header-Area End-->
 
     <!--Menu Start-->
@@ -500,7 +505,7 @@
                                 <a href="javascript:void;">
                                     <div class="dropdown-main-container">
                                         <div class="name">
-                                            {{ PAGE }}
+                                             Halaman
                                         </div>
                                         <div class="icon">
                                             <i class="fas fa-sort-down"></i>
@@ -578,16 +583,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-12">
-                    <div class="call-text">
+                    {{-- <div class="call-text">
                         <h3>{{ $footer_setting->cta_text }}</h3>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-3 col-md-4 col-12">
                     <div class="button">
-                        <a href="{{ $footer_setting->cta_button_url }}">
+                        {{-- <a href="{{ $footer_setting->cta_button_url }}">
                             {{ $footer_setting->cta_button_text }}
                             <i class="fa fa-chevron-circle-right"></i>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -639,7 +644,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
-                        <h3>{{ FOOTER_3_HEADING }}</h3>
+                        <h3>Gallery</h3>
                         <div class="row pl-10 pr-10">
                             @php
                                 $i=0;
@@ -706,13 +711,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="footer-menu">
+                    {{-- <div class="footer-menu">
                         <ul>
                             <li><a href="{{ route('home.page') }}">{{ HOME }}</a></li>
                             <li><a href="{{ route('term.and.condition') }}">{{ TERMS_AND_CONDITIONS }}</a></li>
                             <li><a href="{{ route('privacy.policy') }}">{{ PRIVACY_POLICY }}</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
 
                     @if($setting->tawk_live_chat_status == 'On')
                         {!! $setting->tawk_live_chat_code !!}
