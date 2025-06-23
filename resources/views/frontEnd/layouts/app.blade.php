@@ -403,12 +403,12 @@
     {!! $comment->code_body !!}
 
     <!-- Banner Gambar -->
-<div class="top-banner">
-    <img src="{{ asset('asset/tanpajudul.png') }}" alt="Banner Puskesmas" style="width: 100%; height: 185px;">
-</div>
+{{-- <div class="top-banner">
+    <img src="{{ asset('asset/tanpajudul1.png') }}" alt="Banner Puskesmas" style="width: 100%; height: 350px;">
+    </div> --}}
 
     <!--Header-Area Start-->
-    {{-- <div class="header-area">
+    <div class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-5 col-12">
@@ -462,7 +462,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!--Header-Area End-->
 
     <!--Menu Start-->

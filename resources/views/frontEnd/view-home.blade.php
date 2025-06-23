@@ -178,8 +178,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>Berita Terkini</h2>
-                    <h3>Seputar Kegiatan Puskesmas Bontang Utara 1</h3>
+                    <h2>{{ $page_home->home_blog_title }}</h2>
+                    <h3>{{ $page_home->home_blog_subtitle }}</h3>
                 </div>
             </div>
         </div>
@@ -230,39 +230,6 @@
 @endif
 <!--Blog-Area End-->
 
-<!--Choose-Area Start-->
-@if($page_home_lang_independent->home_why_choose_status == 'Show')
-<div class="choose-area pb_90">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="headline">
-                    <h2>{{ $page_home->home_why_choose_title }}</h2>
-                    <h3>{{ $page_home->home_why_choose_subtitle }}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach($why_chooses as $data)
-                <div class="col-lg-4">
-                    <div class="choose-item flex" style="background-image: url({{ asset('upload/'.$data->photo) }})">
-                        <div class="choose-icon">
-                            <i class="{{ $data->icon }}" aria-hidden="true"></i>
-                        </div>
-                        <div class="choose-text">
-                            <h4>{{ $data->name }}</h4>
-                            <p>
-                                {!! $data->content !!}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-@endif
-<!--Choose-Area End-->
 
 <!--Feature-Area Start-->
 @if($page_home_lang_independent->home_feature_status == 'Show')
@@ -305,8 +272,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>Layanan Kami</h2>
-                    <h3>Kami Selalu Hadir Memberikan Layanan Terbaik</h3>
+                    <h2>{{ $page_home->home_service_title }}</h2>
+                    <h3>{{ $page_home->home_service_subtitle }}</h3>
                 </div>
             </div>
         </div>
@@ -376,6 +343,40 @@
 @endif
 <!--Counter-Area End-->
 
+<!--Choose-Area Start-->
+@if($page_home_lang_independent->home_why_choose_status == 'Show')
+<div class="choose-area pb_90">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="headline">
+                    <h2>{{ $page_home->home_why_choose_title }}</h2>
+                    <h3>{{ $page_home->home_why_choose_subtitle }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach($why_chooses as $data)
+                <div class="col-lg-4">
+                    <div class="choose-item flex" style="background-image: url({{ asset('upload/'.$data->photo) }})">
+                        <div class="choose-icon">
+                            <i class="{{ $data->icon }}" aria-hidden="true"></i>
+                        </div>
+                        <div class="choose-text">
+                            <h4>{{ $data->name }}</h4>
+                            <p>
+                                {!! $data->content !!}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+@endif
+<!--Choose-Area End-->
+
 <!--Portfolio Start-->
 @if($page_home_lang_independent->home_portfolio_status == 'Show')
 <div class="portfolio-area pt_90 pb_90">
@@ -383,8 +384,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>Inovasi</h2>
-                    <h3>Kami percaya, inovasi adalah kunci untuk melayani lebih baik, cepat da murah. Guna meningkatkan kualitas hidup masyarakat secara berkelanjutan.</h3>
+                    <h2>{{ $page_home->home_portfolio_title }}</h2>
+                    <h3>{{ $page_home->home_portfolio_subtitle }}</h3>
                 </div>
             </div>
         </div>
@@ -521,8 +522,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="headline">
-                    <h2>Tenaga Profesional di Balik Pelayanan Terbaik Kami</h2>
-                    <h3>“Kami Bekerja dengan Hati, Melayani dengan Ilmu”</h3>
+                    <h2>{{ $page_home->home_team_title }}</h2>
+                    <h3>{{ $page_home->home_team_subtitle }}</h3>
                 </div>
             </div>
         </div>
@@ -540,27 +541,27 @@
                             </div>
                             <div class="team-social">
                                 <ul>
-                                    {{-- @if($data->facebook != '')
+                                    @if($data->facebook != '')
                                         <li><a href="{{ $data->facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                                    @endif --}}
-                                    {{-- @if($data->twitter != '')
-                                        <li><a href="{{ $data->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    @endif --}}
-                                    @if($data->linkedin != '')
-                                        <li><a href="https://wa.me/{{ $data->linkedin }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                     @endif
-                                    {{-- @if($data->youtube != '')
+                                    @if($data->twitter != '')
+                                        <li><a href="{{ $data->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    @endif
+                                    @if($data->linkedin != '')
+                                        <li><a href="{{ $data->linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                    @endif
+                                    @if($data->youtube != '')
                                         <li><a href="{{ $data->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                    @endif --}}
-                                    {{-- @if($data->google_plus != '')
+                                    @endif
+                                    @if($data->google_plus != '')
                                         <li><a href="{{ $data->google_plus }}" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                                    @endif --}}
-                                    {{-- @if($data->instagram != '')
+                                    @endif
+                                    @if($data->instagram != '')
                                         <li><a href="{{ $data->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    @endif --}}
-                                    {{-- @if($data->flickr != '')
+                                    @endif
+                                    @if($data->flickr != '')
                                         <li><a href="{{ $data->flickr }}" target="_blank"><i class="fab fa-flickr"></i></a></li>
-                                    @endif --}}
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -651,6 +652,7 @@
 </div>
 @endif
 <!--Testomonial-Area End-->
+
 
 <!--Brand-Area Start-->
 <div class="brand-area bg-area pt_90 pb_90">

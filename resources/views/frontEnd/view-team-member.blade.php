@@ -10,7 +10,7 @@
         </div>
     </div>
 </div>
-<!--Banner End--> 
+<!--Banner End-->
 
 <!--Team Start-->
 <div class="team-detail pt_60 pb_90">
@@ -27,11 +27,11 @@
                             <li><span><i class="fa fa-envelope"></i></span>{{ $member->email }}</li>
                         @endif
                         @if($member->phone != '')
-                            <li><span><i class="fa fa-phone"></i></span>{{ $member->phone }}</li> 
+                            <li><span><i class="fa fa-phone"></i></span>{{ $member->phone }}</li>
                         @endif
-                        @if($member->website != '')
+                        {{-- @if($member->website != '')
                             <li><span><i class="fa fa-globe"></i></span>{{ $member->website }}</li>
-                        @endif
+                        @endif --}}
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <p>
                         {!! $member->detail !!}
                     </p>
-                    <ul>
+                    {{-- <ul>
                         @if($member->facebook != '')
                             <li><a href="{{ $member->facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
                         @endif
@@ -70,7 +70,7 @@
                         @if($member->flickr != '')
                             <li><a href="{{ $member->flickr }}" target="_blank"><i class="fab fa-flickr"></i></a></li>
                         @endif
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>
