@@ -42,7 +42,7 @@ use App\Http\Controllers\BackEnd\PageTermController as PageTermControllerForBack
 use App\Http\Controllers\BackEnd\PagePrivacyController as PagePrivacyControllerForBackEnd;
 use App\Http\Controllers\BackEnd\DynamicPagesController as DynamicPagesControllerForBackEnd;
 use App\Http\Controllers\BackEnd\FooterController as FooterControllerForBackEnd;
-use App\Http\Controllers\BackEnd\MenuController as MenuControllerForBackEnd; 
+use App\Http\Controllers\BackEnd\MenuController as MenuControllerForBackEnd;
 use App\Http\Controllers\BackEnd\LanguageController as LanguageControllerForBackEnd;
 use App\Http\Controllers\BackEnd\LangDetailController as LangDetailControllerForBackEnd;
 use App\Http\Controllers\BackEnd\LanguageAdminController as LanguageAdminControllerForBackEnd;
@@ -62,11 +62,11 @@ use App\Http\Controllers\BackEnd\ServiceController as ServiceControllerForBackEn
 use App\Http\Controllers\BackEnd\FeatureController as FeatureControllerForBackEnd;
 use App\Http\Controllers\BackEnd\WhyChooseController as WhyChooseControllerForBackEnd;
 use App\Http\Controllers\BackEnd\FaqController as FaqControllerForBackEnd;
-use App\Http\Controllers\BackEnd\SocialMediaController as SocialMediaControllerForBackEnd; 
+use App\Http\Controllers\BackEnd\SocialMediaController as SocialMediaControllerForBackEnd;
 use App\Http\Controllers\BackEnd\FileController as FileControllerForBackEnd;
+use App\Http\Controllers\ExternalRssController;
 
-
-
+Route::get('/tips-kesehatan', [ExternalRssController::class, 'index']);
 Route::get('/', [HomeController::class,'index'])->name('home.page');
 Route::get('/home/page/{slug}', [HomeController::class,'dynamicPage'])->name('home.dynamic.page');
 Route::post('/home/send-email', [HomeController::class,'sendEmail'])->name('home.send.email');
@@ -164,9 +164,9 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::resource('news',NewsControllerForBackEnd::class)->except('show');
     Route::get('fb/comment', [NewsControllerForBackEnd::class,'comment'])->name('news.comment');
     Route::put('fb/{id}/comment-update', [NewsControllerForBackEnd::class,'commentUpdate'])->name('comment.update');
-    
+
     Route::resource('events',EventControllerForBackEnd::class)->except('show');
-    
+
     Route::get('subscribers', [SubscriberControllerForBackEnd::class,'index'])->name('subscribers.index');
     Route::delete('subscriber/{id}/destroy', [SubscriberControllerForBackEnd::class,'destroy'])->name('subscribers.destroy');
 

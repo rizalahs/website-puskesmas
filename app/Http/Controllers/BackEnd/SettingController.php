@@ -202,7 +202,7 @@ class SettingController extends Controller
         if(env('PROJECT_MODE') == 0) {
             return redirect()->back()->with('error', env('PROJECT_NOTIFICATION'));
         }
-        
+
         $setting = Setting::findOrFail($id);
 
         if ($request->top_bar_email || $request->top_bar_phone != null) {

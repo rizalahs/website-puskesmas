@@ -653,6 +653,14 @@
 @endif
 <!--Testomonial-Area End-->
 
+{{-- <!--Berita Kemenkes-->
+        <div class="call-us" style="background-image: url({{ asset('upload/'.$footer_setting_lang_independent->cta_background) }}">
+        <div class="container">
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-9fac8069-36ae-454f-ad32-392f4313de02" data-elfsight-app-lazy></div>
+        </div>
+        </div>
+<!--Berita Kemenkes--> --}}
 
 <!--Brand-Area Start-->
 <div class="brand-area bg-area pt_90 pb_90">

@@ -180,7 +180,7 @@
     <link rel="stylesheet" href="{{ asset('frontEnd/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/jquery-ui.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('frontEnd/fontawesome-free/css/all.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('frontEnd/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/magnific-popup.css') }}">
@@ -189,6 +189,7 @@
     <link rel="stylesheet" href="{{ asset('frontEnd/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -215,6 +216,7 @@
     <script src="{{ asset('frontEnd/js/viewportchecker.js') }}"></script>
     <script src="{{ asset('frontEnd/js/sweetalert2.min.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <style>
         .header-area,
@@ -400,12 +402,18 @@
 </head>
 
 <body>
+    <!-- widget_disabilitas -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=NHe0yEod"></script>
+    <script src="{{ asset('frontEnd/js/widget_disabilitas.js') }}"></script>
+
     {!! $comment->code_body !!}
 
     <!-- Banner Gambar -->
-{{-- <div class="top-banner">
+    {{-- <div class="top-banner">
     <img src="{{ asset('asset/tanpajudul1.png') }}" alt="Banner Puskesmas" style="width: 100%; height: 350px;">
     </div> --}}
+
+
 
     <!--Header-Area Start-->
     <div class="header-area">
@@ -498,6 +506,15 @@
                             <li><a href="{{ route('home.about') }}">Tentang</a></li>
                             @endif
 
+                            @if($check_menu[11] == 'Show')
+                            <li><a href="{{ route('home.news') }}">Berita</a></li>
+                            @endif
+
+
+                             @if($check_menu[4] == 'Show')
+                            <li><a href="{{ route('home.event') }}">Acara</a></li>
+                            @endif
+
                             @if($check_menu[3] == 'Show')
                             <li><a href="{{ route('home.team') }}">Team</a></li>
                             @endif
@@ -513,9 +530,6 @@
                                     </div>
                                 </a>
                                 <ul>
-                                    @if($check_menu[4] == 'Show')
-                                    <li><a href="{{ route('home.event') }}">Acara</a></li>
-                                    @endif
 
                                     @if($check_menu[5] == 'Show')
                                     <li><a href="{{ route('home.photo.gallery') }}">PHOTO_GALLERY</a></li>
@@ -545,11 +559,7 @@
                             @endif
 
                             @if($check_menu[10] == 'Show')
-                            <li><a href="{{ route('home.portfolio') }}">{{ PORTFOLIO }}</a></li>
-                            @endif
-
-                            @if($check_menu[11] == 'Show')
-                            <li><a href="{{ route('home.news') }}">Berita</a></li>
+                            <li><a href="{{ route('home.portfolio') }}">Inovasi</a></li>
                             @endif
 
                             @if($check_menu[12] == 'Show')
@@ -581,21 +591,26 @@
     <!--Call Start-->
     <div class="call-us" style="background-image: url({{ asset('upload/'.$footer_setting_lang_independent->cta_background) }}">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-12">
+            {{-- <div class="row"> --}}
+                {{-- <div class="col-lg-9 col-md-8 col-12"> --}}
+                    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+
+                <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-a7d0c17f-d759-4c48-87a5-b2eece0d8630" data-elfsight-app-lazy></div>
+
                     {{-- <div class="call-text">
                         <h3>{{ $footer_setting->cta_text }}</h3>
                     </div> --}}
-                </div>
-                <div class="col-lg-3 col-md-4 col-12">
-                    <div class="button">
+                {{-- </div> --}}
+                {{-- <div class="col-lg-3 col-md-4 col-12"> --}}
+                    {{-- <div class="button"> --}}
                         {{-- <a href="{{ $footer_setting->cta_button_url }}">
                             {{ $footer_setting->cta_button_text }}
                             <i class="fa fa-chevron-circle-right"></i>
                         </a> --}}
-                    </div>
-                </div>
-            </div>
+                    {{-- </div> --}}
+                {{-- </div> --}}
+            {{-- </div> --}}
         </div>
     </div>
     <!--Call End-->
@@ -711,6 +726,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+
                     {{-- <div class="footer-menu">
                         <ul>
                             <li><a href="{{ route('home.page') }}">{{ HOME }}</a></li>
@@ -724,8 +740,20 @@
                     @endif
                     <div class="copy-text">
                         <p>
-                            {{ $footer_setting->footer_copyright }}
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#externalModal">
+                                {{ $footer_setting->footer_copyright }}
+                            </a>
                         </p>
+                        <!-- Modal -->
+                        <div class="modal fade" id="externalModal" tabindex="-1" aria-labelledby="externalModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <iframe src="https://rizal-abdullah.vercel.app/" width="100%" height="500px" style="border: none;"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -878,5 +906,6 @@
         </script>
     @endif
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
